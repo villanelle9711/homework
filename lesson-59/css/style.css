@@ -1,0 +1,72 @@
+body {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(6, 6, 88);
+}
+
+.container {
+    width: 900px;
+    height: 900px;
+    border: 10px solid rgb(71, 8, 18);
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eed7d7;
+    width: 50%;
+    height: 50%;
+
+}
+
+/* ========================================================= */
+
+/* animation-name: ; -обращение к имени нашей анимации
+animation-duration: ;  - сколько сек будет производиться анимация
+animation-iteration-count: -сколько раз анимация будет повторяться. animation-iteration-count:infinite; -бесконечная анимация */
+/* animation-direction: reverse-анимация будет производиться обратно от с самомого после-го ключа к первому.
+animation-direction: alternate- анимация запуститься, а когда закончится начнётся с полесднего, а потом с первого
+/* animation-direction:alternate-reverse;  это наоборот 
+/* animation-delay: -устанавливаем задержку для элемента.
+animation-fill-mode: backwards-когда анимация заканчивается, она возвращается на свое место 
+animation-fill-mode: forwards;-для элемента остаются своцства, которые прописаны для последней точки. Следов-о элемент останется в конце
+animation-timing-function: linear -линейный переход; поведение перехода  */ 
+
+/* ================================================================================================ */
+
+
+
+.inner {
+    animation: inner-move 2s .3s infinite alternate linear,
+    color-move 2s .3s infinite alternate linear;
+}
+
+@keyframes inner-move {
+	0% {
+        transform: translate (0,0);
+	}
+    50% {
+        border-radius: 50%;
+    }
+    25% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translate(100%,100%);
+    }
+    100% {
+        transform: translate (0,0);
+    }
+}
+
+
+@keyframes color-move {
+    0% {
+        background-color: #a2cc40;
+    }
+    50% {
+        background-color: rgb(21, 105, 86);
+    }
+}
